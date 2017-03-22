@@ -1,13 +1,13 @@
 #from __future__ import print_function  # Only needed for Python 2
 
 
-
+import time
 import os
 
 CONFIG_DIR = None
 
 
-def fileio_4():
+def fileio_1():
     # If you choose to go with print(..., file=f) you will probably find that you'll want to suppress the newline from
     # time to time, or replace it with something else. This can be done by setting the optional end parameter, e.g.;
     with open("test", 'w') as f:
@@ -16,21 +16,33 @@ def fileio_4():
         #print('Foo3', file=f)
         print
 
-def fileio_1():
+def fileio_2():
     f = open('myfile', 'w')
     f.write('hi there\n')  # python will convert \n to os.linesep
     f.close()  # you can omit in most cases as the destructor will call it
 
 
-def fileio_2():
+def fileio_3():
     print("hi there")
 
 
-def fileio_3():
+def fileio_4():
     with open('file_to_write', 'w') as f:
        f.write('file contents')
 
-def file_func_5():
+
+def fileio_5():
+    x = 0
+    output_file = 'mytestfile.txt'
+    with open(output_file, 'a') as f:
+        while x < 4:
+            load = 'file content:' + str(x) + '\n'
+            print 'write contents to file:', load
+            f.write(load)
+            time.sleep(.5)
+            x += 1
+
+def file_func_6():
     # When you said Line it means some serialized characters which are ended to '\n' characters. Line should be last at
     # some point so we should consider '\n' at the end of each line. Here is solution:
     # in append mode after each write the cursor move to new line, if you want to use 'w' mode you should add '\n'
@@ -39,7 +51,7 @@ def file_func_5():
     with open('YOURFILE.txt', 'a') as the_file:
         the_file.write('Hello')
 
-def fileio_func_6():
+def fileio_func_7():
     file = open('testfile.txt', 'w')
 
     file.write('HelloWorld')
@@ -49,7 +61,7 @@ def fileio_func_6():
 
     file.close()
 
-def fileio_func_7():
+def fileio_func_8():
     file = open("textfile.txt","w")
     print 
    
@@ -70,7 +82,7 @@ def get_base_dir_path():
     print 'helpers_dir:',helpers_dir
     return os.path.split(helpers_dir)
 
-def test_ospath():
+def greptest_ospath():
     '''
     os.path.abspath(path)
     os.path.basename(path)
@@ -118,6 +130,7 @@ def test_ospath():
 if __name__ == "__main__":
     #fileio_3()
     #print get_base_dir_path()
-    test_ospath()
+    #test_ospath()
+    fileio_5()
     
 
