@@ -4,4 +4,4 @@ tree = {"name":"sam", "address":"230 black st san jose ca 95050", "phone":"408-2
 
 print 'print the tree structure:',tree
 
-pprint.print(tree)
+pprint.pprint(tree)

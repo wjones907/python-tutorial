@@ -1,8 +1,26 @@
+##############################################################################################################
+#   argparseFunc.py
+#       - simple arg parser object
+#           - parser = argparse.ArgumentParser()    (create the parser object)
+#               - two types of arguments
+#                   - positional  (must be present)
+#                   - optional    (optionally present)
+#               - first thing to do is identify the arguments you expect
+#                   - parser.add_argument(count)
+#                   - parser.add_argument("-v", help="verbose mode")     (there are several func params we can add - discussed later)
+#               - read the argument(s) read in from the command line
+#                   - args = parser.parse_args()
+#               - pick off the arguments from the args array
+#                   - loop_count = args.count
+#                   -
+#
+#
+#
+##############################################################################################################
+
 import argparse
 
-
-
-def one():
+def sample_one():
     parser = argparse.ArgumentParser()
     parser.parse_args()
 

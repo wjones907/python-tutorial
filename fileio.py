@@ -63,10 +63,16 @@ def fileio_func_7():
 
 def fileio_func_8():
     file = open("textfile.txt","w")
-    print 
-   
+    print
 
 
+def fileio_func_9():
+    print 'open a file in append mode - write a line at the end of the file'
+    vle_config = 'vle_config.conf'
+    client_ct = 10
+    with open(vle_config, 'a') as f:
+        config_param = 'CLIENTS_NUM_MAX=' + str(client_ct)
+        f.write(config_param + '\n')
 
 def get_base_dir_path():
     """
@@ -131,6 +137,7 @@ if __name__ == "__main__":
     #fileio_3()
     #print get_base_dir_path()
     #test_ospath()
-    fileio_5()
+    #fileio_5()
+    fileio_func_9()
     
 
